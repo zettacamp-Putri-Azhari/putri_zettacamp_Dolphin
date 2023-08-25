@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;1,300&display=swap');
+
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+
+      header {
+        background-color: #cfccff;
+        color: #5f27cd;
+        display: flex;
+        justify-content: center;
+      }
+
+      main {
+        margin: 0;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .Input {
+        width: 99%;
+        height: 30px;
+      }
+
+      .button {
+        background-color: #5f27cd;
+        padding: 15px 50px;
+        border: none;
+        color: antiquewhite;
+      }
+
+      footer {
+        background-color: #cfccff;
+        color: #5f27cd;
+        padding: 10px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h3>Create New User</h3>
+    </header>
+    <main>
+      <form>
+        <label for="first-name">First Name</label> <br />
+        <input type="text" name="first-name" class="Input" placeholder="Firstname" required /> <br /><br />
+
+        <label for="last-name">Last Name</label> <br />
+        <input type="text" name="last-name" class="Input" placeholder="Lastname" required /><br /><br />
+
+        <label for="biography">Biography</label> <br />
+        <textarea id="bio" rows="10" cols="78" placeholder="Input Your Biography" required></textarea><br /><br />
+
+        <label for="gender">Gender : </label><br />
+        <input type="radio" name="gender" />
+        <label for="female">Female</label><br />
+
+        <input type="radio" name="gender" />
+        <label for="male">Male</label><br /><br />
+
+        <label for="email">Email</label> <br />
+        <input type="email" name="email" class="Input" placeholder="Input Your Email" required /><br /><br />
+
+        <label for="telephone">Telephone</label> <br />
+        <input type="text" name="telephone" class="Input" placeholder="Input Your Number" required /><br /><br />
+
+        <label for="age">Age</label> <br />
+        <input type="number" name="age" class="Input" placeholder="Input Your Age" required /><br /><br />
+
+        <label for="sosmed">Social Media</label> <br />
+        <input type="url" name="sosmed" class="Input" placeholder="Input Your Social Media" required /><br /><br />
+
+        <label> <input type="submit" class="button" value="Submit" /> </label><br />
+        <br />
+      </form>
+    </main>
+  </body>
+  <footer>
+    <p>Copyright &copy; 2023 Putri Adetya Azhari. All rights reserved.</p>
+  </footer>
+</html>

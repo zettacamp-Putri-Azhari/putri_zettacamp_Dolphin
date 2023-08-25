@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shopping List</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        text-align: center;
+      }
+      dl {
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+      dt {
+        font-weight: bold;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+      }
+      img {
+        max-width: 50px;
+        max-height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Shopping List</h1>
+    <dl>
+      <dt>Shopping List Description:</dt>
+      <dd>Items to buy and their details.</dd>
+    </dl>
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Amount</th>
+          <th>Price</th>
+          <th>Total</th>
+          <th>Image</th>
+          <th>Varieties</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Apples</td>
+          <td>2 kg</td>
+          <td>$1.99/kg</td>
+          <td>$3.98</td>
+          <td><img src="apple.jpg" alt="Apple" /></td>
+          <td>
+            <ul>
+              <li>Red</li>
+              <li>Green</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Orange Juice</td>
+          <td>1 bottle</td>
+          <td>$2.49</td>
+          <td>$2.49</td>
+          <td><img src="orange_juice.jpg" alt="Orange Juice" /></td>
+          <td>
+            <ul>
+              <li>Regular</li>
+              <li>With Pulp</li>
+            </ul>
+          </td>
+        </tr>
+        <!-- Add more rows for other items -->
+      </tbody>
+    </table>
+  </body>
+</html>
