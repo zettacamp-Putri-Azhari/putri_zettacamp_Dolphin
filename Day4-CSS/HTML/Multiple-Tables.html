@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiple Tables</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;1,300&display=swap');
+
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+
+      table {
+        width: 80%;
+        border-collapse: collapse;
+        border: 1px solid #5f27cd;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: center;
+        border-bottom: 1px solid #5f27cd;
+        color: #3c3c3c;
+      }
+
+      th {
+        font-weight: bold;
+        color: #000000;
+      }
+
+      table:first-of-type tr:first-child {
+        background-color: green;
+      }
+
+      table:nth-of-type(2) tr:nth-child(2) {
+        background-color: red;
+      }
+
+      table:nth-of-type(3) tr:nth-child(3) {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="konten">
+      <h1>Table Hobby</h1>
+      <table>
+        <tr>
+          <th>My Hobby</th>
+        </tr>
+        <tr>
+          <td>Watching Movies</td>
+        </tr>
+        <tr>
+          <td>Camping</td>
+        </tr>
+        <tr>
+          <td>Sleeping Beauty</td>
+        </tr>
+      </table>
+      <br /><br />
+      <h1>Table Favorites Movies</h1>
+      <table>
+        <tr>
+          <th>Judul</th>
+          <th>Produced By</th>
+          <th>Genre</th>
+          <th style="width: 150px">Release Date</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>Ms. Marvel</td>
+          <td>Marvel Studio</td>
+          <td>Action, Adventure, Comedy</td>
+          <td>June 08, 2022</td>
+          <td>
+            Kamala, a superhero fan with an imagination&ndash;particularly when it comes to Captain Marvel&ndash;feels like she doesn't fit
+            in at school and sometimes even at home, that is until she gets superpowers like the heroes she admires.
+          </td>
+        </tr>
+        <tr>
+          <td>Furie</td>
+          <td>Giang Ho</td>
+          <td>Action, Drama, Thriler</td>
+          <td>May 21, 2019</td>
+          <td>
+            Veronica Ngo stars as an ex&ndash;gangster who is lying low in the countryside after becoming a mother, but she can't escape her
+            violent past when her daughter is kidnapped.
+          </td>
+        </tr>
+        <tr>
+          <td>Mouse</td>
+          <td>Hoe&ndash;seok Jeong</td>
+          <td>Action, Crime, Mystery, ci&ndash;Fi, Thriller</td>
+          <td>February 1, 2021</td>
+          <td>
+            Jung Ba Reum (Lee Seung-gi) is a rookie police officer, working at a police substation whose life changes when he encounters a
+            psychopathic serial killer
+          </td>
+        </tr>
+      </table>
+      <br /><br />
+      <h1>Table Favorite Song</h1>
+      <table>
+        <tr>
+          <th>Artis</th>
+          <th>Release Date</th>
+          <th>Title</th>
+          <th>Album</th>
+        </tr>
+        <tr>
+          <td>NIKI</td>
+          <td>August 13, 2020</td>
+          <td>LOSE</td>
+          <td>MOONCHILD</td>
+        </tr>
+        <tr>
+          <td>BLACKPINK</td>
+          <td>September 16, 2022</td>
+          <td>Tally</td>
+          <td>BORN PINK</td>
+        </tr>
+        <tr>
+          <td>KESHI</td>
+          <td>March 25, 2022</td>
+          <td>Limbo</td>
+          <td>GABRIEL</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
+
+<!-- Project 2 : Embedded Styling
+Create UI for Multiple Tables. Table Hobby, Table Favorites Movies, And Table Favorites Song. 
+The First row of the First Table has Green Background, the second row of Second table has Red background, 
+and the third row of Third table has a blue background.
+ -->
