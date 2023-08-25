@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;1,300&display=swap');
+
+* {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  margin: 0;
+}
+
+/* Header */
+header {
+  justify-content: center;
+  display: flex;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #cfccff;
+}
+
+nav li {
+  float: right;
+}
+
+nav li a {
+  display: block;
+  color: #5f27cd;
+  text-align: right;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #5f27cd;
+  color: antiquewhite;
+}
+
+.active {
+  background-color: #5f27cd;
+  color: antiquewhite;
+}
+
+/* Konten */
+main {
+  width: 80%;
+  margin: auto;
+}
+
+h1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.position {
+  position: sticky;
+  top: 0;
+}
+
+.fs {
+  font-style: italic;
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Konten Cards */
+.Konten {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.card {
+  box-shadow: 0 2px 7px grey;
+  width: 25%;
+  margin: 30px 20px;
+}
+
+.w-100 {
+  width: 100%;
+  margin-top: 2rem;
+  box-shadow: 0 1px 1px grey;
+}
+
+p {
+  color: #3c3c3c;
+}
+
+.container {
+  margin: 1rem 1rem;
+}
+
+.tombol {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+input[type='text'],
+input[type='number'],
+textarea select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type='submit'] {
+  background-color: white;
+  padding: 15px 30px;
+  border: 1px solid #5f27cd;
+  color: #5f27cd;
+  border-radius: 12px;
+  cursor: pointer;
+  margin: 10px 10px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+input[type='submit']:hover {
+  background-color: #5f27cd;
+  color: white;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #5f27cd;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #5f27cd;
+  color: #3c3c3c;
+}
+
+th {
+  font-weight: bold;
+  color: #000000;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+}
+
+.icons a {
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.icons img {
+  width: 32px;
+  height: 32px;
+}
+
+/* Footer */
+footer {
+  background-color: #cfccff;
+  color: #5f27cd;
+  padding: 10px;
+  text-align: center;
+  font-size: 1rem;
+  height: 12 vh;
+}

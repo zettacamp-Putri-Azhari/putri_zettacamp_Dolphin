@@ -1,0 +1,19 @@
+TASK
+Final task of CSS. Will include all previous days' learning:
+
+
+Create 5 FIle HTML and 1 file CSS.
+index.html (for homepage)
+shopping-list.html
+add-item.html
+about-me.html
+contact-me.html
+style.css
+Create Header, Menu, Content, Footer with styling (external and inline).
+There is 4 Menu using anchor:
+Home, Contains multimedia (Your favorite video), and Website description.
+Shopping List, Contains list of items with description and image inside card and using flex (max. 3 items / row)
+Add Item (Submenu of Shopping List), Contains form to add item with dummy display added item.
+About me, Contains the profile.
+Contact me, Contains the form to send the criticism and suggestions
+
