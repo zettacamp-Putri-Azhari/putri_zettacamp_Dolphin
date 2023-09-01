@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Storage - CRUD</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;1,300&display=swap');
+
+      * {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 80%;
+      }
+
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      th {
+        background-color: #cfccff;
+        font-weight: normal;
+        color: #5f27cd;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Books Inventory</h1>
+    <div class="button">
+      <button id="addNewBookBtn">Add Book</button>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th></th>
+          <th style="width: 160px">Title</th>
+          <th>Count</th>
+          <th>Author</th>
+          <th>Description</th>
+          <th style="width: 100px">Action</th>
+        </tr>
+      </thead>
+      <tbody id="tblbody"></tbody>
+    </table>
+
+    <script>
+      //   const books = [
+      //     {
+      //       id: 1,
+      //       title: 'Laut Bercerita',
+      //       count: 5,
+      //       author: 'Leila S. Chudori',
+      //       description:
+      //         'Laut Bercerita, novel terbaru Leila S. Chudori, bertutur tentang kisah keluarga yang kehilangan, sekumpulan sahabat yang merasakan kekosongan di dada, sekelompok orang yang gemar menyiksa dan lancar berkhianat, sejumlah keluarga yang mencari kejelasan akan anaknya, dan tentang cinta yang tak akan luntur.',
+      //     },
+      //     {
+      //       id: 2,
+      //       title: 'Di Tanah Lada',
+      //       count: 5,
+      //       author: 'Ziggy Zezsyazeoviennazabrizkie',
+      //       description:
+      //         ' Ditulis dengan alur yang penuh kejutan dan gaya bercerita yang unik, sudah selayaknya para juri sayembara memilih novel Di Tanah Lada sebagai salah satu juaranya.',
+      //     },
+      //   ];
+      const tableBody = document.getElementById('tblbody');
+
+      getBookDataLocalStorage();
+
+      function getBookDataLocalStorage() {
+        const bookData = JSON.parse(localStorage.getItem('books')) || [];
+        tableBody.innerHTML = '';
+
+        bookData.forEach((value, index) => {
+          const tableRow = `
+                          <tr id="${value.id}">
+                              <td>${index + 1}</td>
+                              <td>${value.title}</td>
+                              <td>${value.count}</td>
+                              <td>${value.author}</td>
+                              <td>${value.description}</td>
+                              <td>
+                                  <button onclick='editBook(${value.id})'>Edit</button>
+                                  <button onclick='deleteBook(${value.id})'>Delete</button>
+                              </td>
+                          </tr>`;
+          tableBody.innerHTML += tableRow;
+        });
+
+        const createNewRowForm = `
+                      <tr>
+                          <td></td>
+                          <td><input type="text" id="newTitle" placeholder="Title" /></td>
+                          <td><input type="number" id="newCount" placeholder="Total Count" /></td>
+                          <td><input type="text" id="newAuthor" placeholder="Author" /></td>
+                          <td><textarea id="newDesc" placeholder="Description"></textarea></td>
+                          <td><button onclick='addBookDataLocalStorage()'>Save</button></td>
+                      </tr>`;
+        tableBody.innerHTML += createNewRowForm;
+      }
+
+
+      function addBookDataLocalStorage() {
+        const newId = Date.now();
+        console.log(newId);
+        const newTitle = document.getElementById('newTitle').value;
+        const newCount = parseInt(document.getElementById('newCount').value);
+        const newAuthor = document.getElementById('newAuthor').value;
+        const newDesc = document.getElementById('newDesc').value;
+
+        const newBook = {
+          id: newId,
+          title: newTitle,
+          count: newCount,
+          author: newAuthor,
+          description: newDesc,
+        };
+
+        let books = JSON.parse(localStorage.getItem('books')) || [];
+        books.push(newBook);
+        localStorage.setItem('books', JSON.stringify(books));
+
+        getBookDataLocalStorage();
+      }
+
+      function editBook(bookId) {
+        const row = document.getElementById(bookId);
+        const rowData = row.querySelectorAll('td');
+
+        const title = rowData[1].innerText;
+        const count = rowData[2].innerText;
+        const author = rowData[3].innerText;
+        const desc = rowData[4].innerText;
+
+        rowData[1].innerHTML = `<input type="text" class='trData' value="${title}">`;
+        rowData[2].innerHTML = `<input type="number" class='trData' value="${count}">`;
+        rowData[3].innerHTML = `<input type="text" class='trData' value="${author}">`;
+        rowData[4].innerHTML = `<textarea class='trData'>${desc}</textarea>`;
+
+        const actionsCell = row.querySelector('td:last-child');
+        actionsCell.innerHTML = `<button onclick="saveEditedBook(${bookId})">Save</button>`;
+      }
+
+      function saveEditedBook(bookId) {
+        const row = document.getElementById(bookId);
+        const rowData = row.querySelectorAll('td');
+
+        const updatedTitle = rowData[1].querySelector('input').value;
+        const updatedTotalCount = rowData[2].querySelector('input').value;
+        const updatedAuthor = rowData[3].querySelector('input').value;
+        const updatedDesc = rowData[4].querySelector('textarea').value;
+
+        const books = JSON.parse(localStorage.getItem('books')) || [];
+        const bookIndex = books.findIndex((book) => book.id === bookId);
+        if (bookIndex !== -1) {
+          books[bookIndex].title = updatedTitle;
+          books[bookIndex].count = parseInt(updatedTotalCount);
+          books[bookIndex].author = updatedAuthor;
+          books[bookIndex].description = updatedDesc;
+          localStorage.setItem('books', JSON.stringify(books));
+        }
+
+        rowData[1].innerHTML = updatedTitle;
+        rowData[2].innerHTML = updatedTotalCount;
+        rowData[3].innerHTML = updatedAuthor;
+        rowData[4].innerHTML = updatedDesc;
+
+        const actionsCell = row.querySelector('td:last-child');
+        actionsCell.innerHTML = `
+					<button onclick="editBook(${bookId})">Edit</button> 
+					<button onclick="deleteBook(${bookId})">Delete</button>`;
+      }
+
+      function deleteBook(bookId) {
+        let books = JSON.parse(localStorage.getItem('books')) || [];
+        books = books.filter((book) => book.id !== bookId);
+        console.log(books);
+        localStorage.setItem('books', JSON.stringify(books));
+
+        getBookDataLocalStorage();
+      }
+
+    //   localStorage.clear();
+    </script>
+  </body>
+</html>
